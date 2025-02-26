@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole Meter - Create Poll</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="qrcode.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="firebase-config.js"></script> 
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Poll</h1>
+        <input type="text" id="poll-title" placeholder="Enter poll title">
+        <div id="options">
+            <input type="text" class="option" placeholder="Option 1">
+            <input type="text" class="option" placeholder="Option 2">
+        </div>
+        <button onclick="addOption()">Add Option</button>
+
+        <label for="timer">Set Timer:</label>
+        <select id="timer">
+            <option value="45">45 Seconds</option>
+            <option value="30">30 Seconds</option>
+            <option value="60">1 Minute</option>
+            <option value="0">Unlimited</option>
+        </select>
+
+        <button onclick="generatePoll()">Generate Poll</button>
+        <div id="qr-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
